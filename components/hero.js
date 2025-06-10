@@ -62,15 +62,6 @@ export default function Hero() {
         <div className="max-w-5xl mx-auto">
           {/* Logo Animation */}
           <div className="mb-8 animate-fade-in-up">
-            <div className="mb-6">
-              <Image
-                src="/logo-new.png"
-                alt="Baroque Variations Logo"
-                width={300}
-                height={100}
-                className="mx-auto object-contain"
-              />
-            </div>
             <p className="text-xl md:text-2xl text-orange-200 font-light">Professional Excellence Delivered</p>
           </div>
 
@@ -78,7 +69,7 @@ export default function Hero() {
           <div className="mb-12 min-h-[300px] flex items-center justify-center">
             <div key={currentSlide} className="animate-slide-in">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">{slides[currentSlide].title}</h2>
-              <p className="text-xl md:text-2xl text-orange-200 mb-6 font-light">{slides[currentSlide].subtitle}</p>
+              {/* <p className="text-xl md:text-2xl text-orange-200 mb-6 font-light">{slides[currentSlide].subtitle}</p> */}
               <p className="text-lg text-orange-100 max-w-3xl mx-auto leading-relaxed">
                 {slides[currentSlide].description}
               </p>
@@ -92,18 +83,8 @@ export default function Hero() {
                 size="lg"
                 className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg font-semibold group"
               >
-                Get Started Today
+                Contact Us
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link href="/about">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-orange-900 px-8 py-4 text-lg font-semibold group"
-              >
-                <Play className="mr-2 w-5 h-5" />
-                Learn More
               </Button>
             </Link>
           </div>
@@ -120,13 +101,6 @@ export default function Hero() {
               />
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

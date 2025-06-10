@@ -41,7 +41,7 @@ export default function ContactPage() {
       });
 
       if (response.ok) {
-        toast.success("Message sent successfully!", {
+        toast.success("We've recieved your message.", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,

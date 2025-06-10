@@ -13,9 +13,9 @@ export default function TeamPreview() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Meet Our Leadership Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Leadership Team</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Our diverse team of experts brings together decades of experience across multiple industries to deliver
+              Our team of experts brings together decades of experience across multiple industries to deliver
               exceptional results for our clients.
             </p>
           </div>
@@ -30,7 +30,7 @@ export default function TeamPreview() {
                 <CardContent className="p-6 text-center">
                   <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform relative">
                     <Image
-                      src={member.logo || "/placeholder.svg"}
+                      src={member.logo || "/logo.png"}
                       alt={`${member.name} Logo`}
                       fill
                       style={{ objectFit: "contain" }}
@@ -51,7 +51,7 @@ export default function TeamPreview() {
                 size="lg"
                 className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg font-semibold group"
               >
-                Meet Our Full Team
+                See more
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>

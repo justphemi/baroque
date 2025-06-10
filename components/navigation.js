@@ -50,7 +50,7 @@ export default function Navigation() {
                 </Link>
               ))}
               <Link href='mailto:info@baroquevariations.com'>
-                <Button href='mailto:info@baroquevariations.com' className="bg-orange-600 hover:bg-orange-700 text-white">Email us</Button>
+                <Button href='mailto:info@baroquevariations.com' className="bg-orange-600 hover:bg-orange-700 text-white">Email Us</Button>
               </Link>
             </div>
 
@@ -97,7 +97,7 @@ export default function Navigation() {
 
                 <div className="pt-4 border-t border-gray-200">
                   <Link href='mailto:info@baroquevariations.com'>
-                    <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">Get Started</Button>
+                    <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">Email Us</Button>
                   </Link>
                 </div>
               </div>

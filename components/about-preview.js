@@ -5,16 +5,16 @@ import { ArrowRight, Target, Users, Award } from "lucide-react"
 
 export default function AboutPreview() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About Baroque Variations</h2>
+          {/* <div className="text-left mb-16">
+            <h2 className="text-xl md:text-xl font-bold text-gray-700 mb-6">Few words about us..</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We are a dynamic consultancy firm committed to delivering exceptional results through innovative
+              We are a consultancy company committed to delivering exceptional results through innovative
               solutions, expert training, and cutting-edge engineering services.
             </p>
-          </div>
+          </div> */}
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <Card className="text-center group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">

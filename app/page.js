@@ -11,13 +11,12 @@ export default function HomePage() {
       <Hero />
 
       {/* Image Section */}
-      <section className="py-20 bg-white">
+      <section className="pt-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Innovation at Our Core</h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                At Baroque Variations, we believe that innovation is not just about technology—it's about reimagining
+                <strong className='text-xl'>At Baroque Variations</strong>, we believe that innovation is not just about technology—it's about reimagining
                 how businesses operate, grow, and succeed in an ever-evolving marketplace.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">

@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           <Bvbot />
         </div>
 
-      <div className="fixed bottom-6 left-6 z-50 flex items-center gap-2">
+      <div className="fixed bottom-6 left-6 z-30 flex items-center gap-2">
         <button
           onClick={() => setShowInput(!showInput)}
           className="transition-transform hover:scale-105"

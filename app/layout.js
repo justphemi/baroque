@@ -33,9 +33,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navigation />
         <main className="min-h-screen">
-        <div className="fixed bottom-12 right-0 z-50">
+          {!showInput &&
+            <div className="fixed bottom-12 right-0 z-50">
           <Bvbot />
         </div>
+        }
 
       <div className="fixed bottom-6 left-6 z-30 flex items-center gap-2">
         <button

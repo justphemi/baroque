@@ -48,14 +48,6 @@ export default function MemberDetail({ member }) {
         <div className="max-w-4xl mx-auto">
           {/* Member Profile */}
           {/* Back Button */}
-          <div className="mb-1">
-            <Link href="/team">
-              <Button variant="outline" className="group">
-                <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-                Back
-              </Button>
-            </Link>
-          </div>
           <Card className="shadow-xl mb-12">
             <CardContent className="p-8">
               <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
@@ -153,10 +145,19 @@ export default function MemberDetail({ member }) {
           {member.social.linkedin && (
             <SocialMediaEmbed platform="linkedin" username={member.social.linkedin.split("/").pop()} count={5} />
           )}
+          
+          <div className="mb-1">
+            <Link href="/team">
+              <Button variant="outline" className="group">
+                <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+                Back
+              </Button>
+            </Link>
+          </div>
 
 
           {/* Other Team Members Slider */}
-          <Card className="shadow-xl">
+          {/* <Card className="shadow-xl">
             <CardContent className="p-8">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-gray-900">Other Team Members</h2>
@@ -224,7 +225,7 @@ export default function MemberDetail({ member }) {
                 </div>
               )}
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </div>

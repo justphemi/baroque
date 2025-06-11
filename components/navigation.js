@@ -56,9 +56,9 @@ export default function Navigation() {
 
             <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? (
-                <X className="w-9 h-9 text-gray-900 transition-transform duration-300 rotate-180" />
+                <X className="w-8 h-8 text-gray-900 transition-transform duration-300 rotate-180" />
               ) : (
-                <Menu className="w-9 h-9 text-gray-900 transition-transform duration-300" />
+                <Menu className="w-8 h-8 text-gray-900 transition-transform duration-300" />
               )}
             </Button>
           </div>

@@ -2,8 +2,58 @@ import Link from "next/link"
 import Image from "next/image"
 import { MapPin, Mail, Linkedin, Twitter, Facebook, Instagram } from "lucide-react"
 import logo from "../public/logo-new.png"
+import { useState } from "react"
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Footer() {
+  const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzDpYXvJxvNZuHTlWbSABZNxxWYgC8P1Q8193PvjqlEbqhE2jCX8pR7suuMFtmxH03IRg/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `email=${encodeURIComponent(email)}`,
+      })
+      
+      if (response.ok) {
+        toast.success('Subscription successful! Thank you.', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        })
+        setEmail('')
+      } else {
+        throw new Error('Network response was not ok')
+      }
+    } catch (error) {
+      toast.error('Subscription failed. Please try again.', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-16">
@@ -14,16 +64,14 @@ export default function Footer() {
               <div className="w-auto h-10 flex items-center justify-center">
                 <Image src={logo || "/placeholder.svg"} alt="Baroque Variations Logo" width={150} height={120} />
               </div>
-              {/* <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">BV</span>
-              </div> */}
-            
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Leading consultancy firm providing innovative solutions in training, engineering, manufacturing, trading,
               and general services across Nigeria and beyond.
             </p>
-            <div className="space-y-3">
+            
+            {/* Simplified Subscription Form */}
+            <div className="space-y-3 mt-6">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-orange-400 flex-shrink-0" />
                 <span className="text-gray-300">
@@ -40,6 +88,28 @@ export default function Footer() {
                 </a>
               </div>
             </div>
+            <div className="mt-8">
+              <h3 className="font-medium text-lg mb-4">Subscribe to our newsletter</h3>
+              <form onSubmit={handleSubmit} className="flex gap-2">
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white placeholder-gray-400"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-md text-white font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? '...' : 'Subscribe'}
+                </button>
+              </form>
+            </div>
+            
           </div>
 
           {/* Quick Links */}
@@ -117,6 +187,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </footer>
   )
 }

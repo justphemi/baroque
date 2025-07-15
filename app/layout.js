@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
   const [showInput, setShowInput] = useState(false)
 
   const encodedMessage = encodeURIComponent(message)
-  const whatsappLink = `https://wa.me/2349151213285?text=${encodedMessage}`
+  const whatsappLink = `https://wa.me/2348065293576?text=${encodedMessage}`
 
   return (
     <html lang="en">
